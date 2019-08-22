@@ -1,4 +1,4 @@
-from pyexchange import log
+from pyexchange import log, Exchange2010Service
 from pyexchange.connection import ExchangeBaseConnection
 from pyexchange.exceptions import FailedExchangeException
 import requests
@@ -75,3 +75,7 @@ class ExchangeBasicAuthConnection(ExchangeBaseConnection):
         log.debug(u'Got body: {body}'.format(body=response.text))
 
         return response.text
+
+
+class Office365Service(Exchange2010Service):
+    pass
